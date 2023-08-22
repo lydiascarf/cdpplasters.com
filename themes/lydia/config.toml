@@ -1,0 +1,28 @@
+# The URL the site will be built for
+base_url = "/"
+
+title = "Lydia"
+description = "A base template for use in my static projects"
+
+# Whether to automatically compile all Sass files in the sass directory
+compile_sass = true
+
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = false
+
+[markdown]
+highlight_code = false
+
+[extra]
+author = "Lydia Scarf"
+
+[extra.content]
+intro_tagline = "This is an example tagline"
+
+[extra.visual]
+background = "images/background.jpg"
+
+[[extra.lists.connect]]
+url = "mailto:test@test.com"
+text="Email"
+new_tab = false

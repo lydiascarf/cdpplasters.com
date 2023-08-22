@@ -1,0 +1,10 @@
+{% macro bio() %}
+<div class="split-bio">
+    {% if config.extra.content.bio is defined %}
+    <span class="tagline">{{ config.extra.content.bio }}</span>
+    {% else %}
+    <!-- Default tagline. Change me in `config.toml` -->
+    <span class="tagline">Please set a bio</span>
+    {% endif %}
+</div>
+{% endmacro bio %}

@@ -1,0 +1,17 @@
+{% macro connect() %}
+{% if config.extra.lists.connect is defined %}
+<!-- Connect list -->
+<div class="split-list">
+    <ul>
+        <li>
+            <a id="embed-sitchy" data-cal-link="cdpplasters">Book a consultation</a>
+        </li>
+        {% for item in config.extra.lists.connect %}
+        <li>
+            <a href="{{ item.url }}">{{ item.text }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}{# Connect #}
+{% endmacro connect %}

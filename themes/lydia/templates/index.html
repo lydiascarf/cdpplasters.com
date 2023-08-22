@@ -1,0 +1,93 @@
+{% import "macros/head.html" as head -%}
+
+{% import "macros/intro.html" as intro -%}
+{% import "macros/bio.html" as bio -%}
+{% import "macros/lists.html" as lists -%}
+
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}" data-theme="light" dir="ltr">
+  <head>
+    {%- block title -%}
+        <title>{{ config.title }}</title>
+    {%- endblock title -%}
+
+    {%- block general_meta -%}
+        {{ head::general_meta() }}
+    {%- endblock general_meta -%}
+
+    {%- block fonts -%}
+        {{ head::fonts() }}
+    {%- endblock fonts -%}
+
+    {%- block css -%}
+        {{ head::styling() }}
+    {%- endblock css -%}
+
+    {%- block favicon -%}
+        {{ head::favicon() }}
+    {%- endblock favicon -%}
+
+    {%- block rss -%}
+        {{ head::rss() }}
+    {%- endblock rss -%}
+
+  </head>
+  <body id="fullsingle" class="page-template-page-fullsingle-split">
+    <div class="fs-split">
+      {# Left content #}
+      <div class="split-image"></div>
+
+      {# Right content #}
+      <div class="split-content">
+        <div class="split-content-vertically-center">
+          {%- block intro -%}
+          {{ intro::intro() }}
+          {%- endblock intro -%}
+
+          {%- block bio -%}
+          {{ bio::bio() }}
+          {%- endblock bio -%}
+
+          {%- block lists -%}
+          <div class="split-lists">
+          {{ lists::connect() }}
+          </div><!--./lists-->
+          {%- endblock lists -%}
+        </div><!--./vertically-centered-->
+      </div><!--./split-content-->
+    </div><!--./fs-split-->
+    <script>
+      (function (C, A, L) {
+        let p = function (a, ar) {
+          a.q.push(ar);
+        };
+        let d = C.document;
+        C.Cal =
+          C.Cal ||
+          function () {
+            let cal = C.Cal;
+            let ar = arguments;
+            if (!cal.loaded) {
+              cal.ns = {};
+              cal.q = cal.q || [];
+              d.head.appendChild(d.createElement("script")).src = A;
+              cal.loaded = true;
+            }
+            if (ar[0] === L) {
+              const api = function () {
+                p(api, arguments);
+              };
+              const namespace = ar[1];
+              api.q = api.q || [];
+              typeof namespace === "string"
+                ? (cal.ns[namespace] = api) && p(api, ar)
+                : p(cal, ar);
+              return;
+            }
+            p(cal, ar);
+          };
+      })(window, "https://cal.com/embed.js", "init");
+      Cal("init");
+      </script>
+  </body>
+</html>
