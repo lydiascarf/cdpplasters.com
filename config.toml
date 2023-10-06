@@ -1,12 +1,11 @@
 # The URL the site will be built for
-base_url = "https://example.com"
+base_url = "https://cdpplasters.com"
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = false
-theme = "lydia"
 
 [markdown]
 # Whether to do syntax highlighting
@@ -28,8 +27,3 @@ intro_tagline = "Colin Powers"
 [[extra.lists.connect]]
 url = "https://www.instagram.com/cdpplasters/"
 text="Instagram"
-
-[[extra.lists.connect]]
-url = "mailto:cdanielpowers@gmail.com"
-text="Email"
-new_tab = false
